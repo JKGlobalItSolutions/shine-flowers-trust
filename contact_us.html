@@ -10,6 +10,13 @@
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/fontawsom-all.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js" > </script>
+
+    <script type="text/javascript">
+      (function() {
+      emailjs.init("pulNvSNeZB6qh99eV");
+      })(); </script>
+
 </head>
 
     <body>
@@ -20,7 +27,7 @@
                 <div class="row">
                     <div class="col-lg-7 col-md-12 left-item">
                         <ul>
-                            <li><i class="fas fa-envelope-square"></i> shineflowers.tvmalai@gmail.com</li>
+                            <li><i class="fas fa-envelope-square"></i>shineflowerstrust5@gmail.com</li>
                             <li><i class="fas fa-phone-square"></i> 9360751455 ,6382634815</li>
                         </ul>
                     </div>
@@ -97,26 +104,26 @@
             <h2 style="font-size:18px">Contact Form</h2>
                 <div class="row">
                     <div style="padding-top:10px;" class="col-sm-3"><label>Enter Name :</label></div>
-                    <div class="col-sm-8"><input type="text" placeholder="Enter Name" name="name" class="form-control input-sm"  ></div>
+                    <div class="col-sm-8"><input type="text" id="name" placeholder="Enter Name" name="name" class="form-control input-sm"  ></div>
                 </div>
                 <div style="margin-top:10px;" class="row">
                     <div style="padding-top:10px;" class="col-sm-3"><label>Email Address :</label></div>
-                    <div class="col-sm-8"><input type="text" name="name" placeholder="Enter Email Address" class="form-control input-sm"  ></div>
+                    <div class="col-sm-8"><input type="text"  id="email" name="name" placeholder="Enter Email Address" class="form-control input-sm"  ></div>
                 </div>
                  <div style="margin-top:10px;" class="row">
                     <div style="padding-top:10px;" class="col-sm-3"><label>Mobile Number:</label></div>
-                    <div class="col-sm-8"><input type="text" name="name" placeholder="Enter Mobile Number" class="form-control input-sm"  ></div>
+                    <div class="col-sm-8"><input type="text"  id="mobile" name="name" placeholder="Enter Mobile Number" class="form-control input-sm"  ></div>
                 </div>
                  <div style="margin-top:10px;" class="row">
                     <div style="padding-top:10px;" class="col-sm-3"><label>Enter  Message:</label></div>
                     <div class="col-sm-8">
-                      <textarea rows="5" placeholder="Enter Your Message" class="form-control input-sm"></textarea>
+                      <textarea rows="5" placeholder="Enter Your Message"  id="message" class="form-control input-sm"></textarea>
                     </div>
                 </div>
                  <div style="margin-top:10px;" class="row">
                     <div style="padding-top:10px;" class="col-sm-3"><label></label></div>
                     <div class="col-sm-8">
-                     <button class="btn btn-success btn-sm">Send Message</button>
+                     <button class="btn btn-success btn-sm" onclick="sendemail()" type="submit">submit</button>
                     </div>
                 </div>
             </div>
@@ -135,7 +142,7 @@
            Trivannamalai, pincode-606604 <br>
            Tamil Nadu, IND <br>
            Phone: 9360751455 , 6382634815<br>
-           Email: <a href="mailto:shineflowers.tvmalai@gmail.com" class="">shineflowers.tvmalai@gmail.com</a><br>
+           Email: <a href="mailto:shineflowers.tvmalai@gmail.com" class="">shineflowerstrust5@gmail.com</a><br>
 
  
        
@@ -214,6 +221,30 @@
 <script src="assets/js/popper.min.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>        
 <script src="assets/js/script.js"></script>
+<script>
+                
+function sendemail(){
 
+var email=document.getElementById("email").value;
+var name=document.getElementById("name").value;
+var mobile=document.getElementById("mobile").value;
+var message=document.getElementById("message").value;
+
+var templateParams = {
+    email: email,
+    name: name,
+    mobile: mobile,
+    message: message,
+  };
+
+  emailjs.send('service_0kzmsh9', 'template_f1x9uq6', templateParams)
+.then(function(response) {
+ console.log('SUCCESS!', response.status, response.text);
+ window.alert("Sent successfully!");
+ 
+})
+}
+   
+</script>
 
 </html>
