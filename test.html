@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Click Here to copy</p>
+    <a href="#" id="copyUpi">
+        <p style="white-space: pre;"> shineflowers.tvm@okicici</p>
+    </a>
+    
+    <script>
+    document.getElementById('copyUpi').addEventListener('click', function() {
+        // Create a temporary input element
+        var tempInput = document.createElement('input');
+        // Assign the UPI address to its value
+        tempInput.value = 'shineflowers.tvm@okicici';
+        // Append the input element to the document body
+        document.body.appendChild(tempInput);
+        // Select the input element's content
+        tempInput.select();
+        // Copy the selected content
+        document.execCommand('copy');
+        // Remove the temporary input element
+        document.body.removeChild(tempInput);
+        // Prevent the default link behavior
+        return false;
+    });
+    </script>
+    
+    
+</body>
+</html>

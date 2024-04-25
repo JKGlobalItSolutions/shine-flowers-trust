@@ -159,13 +159,25 @@
                <div class="col-lg-6 col-md-12">
                     <img  class="" src="assets/images/scanner.PNG" alt="">
                 </div>
+                
                 <div class="col-lg-6 col-md-12 txtr">
                     <h4>Donate Now<br><br>
                     
                     </h4>
                     <p><b>100% of your donation goes directly to [shineflowerstrust] to support our mission.</p>
+
+                        <br><br>
+                        <p>Click Here to copy</p>
+                        UPI ID : <a href="#" id="copyUpi">
+               <p style="white-space: pre; text-decoration: none; color: blue;"> shineflowers.tvm@okicici</p>
+           </a>
+          Mobile: <a href="#" id="copymobile">
+               <p style="white-space: pre; text-decoration: none; color: blue;">9360751455</p>
+           </a>
                 </div>
-                
+              
+               
+               </div>
             </div>
         </div>
     </section>
@@ -225,6 +237,44 @@
         </div>
     
     
+        <script>
+            document.getElementById('copyUpi').addEventListener('click', function() {
+                // Create a temporary input element
+                var tempInput = document.createElement('input');
+                // Assign the UPI address to its value
+                tempInput.value = 'shineflowers.tvm@okicici';
+                // Append the input element to the document body
+                document.body.appendChild(tempInput);
+                // Select the input element's content
+                tempInput.select();
+                // Copy the selected content
+                document.execCommand('copy');
+                // Remove the temporary input element
+                document.body.removeChild(tempInput);
+                // Show a confirmation message
+                alert('UPI address copied: shineflowers.tvm@okicici');
+                // Prevent the default link behavior
+                return false;
+            });
+            document.getElementById('copymobile').addEventListener('click', function() {
+                // Create a temporary input element
+                var tempInput = document.createElement('input');
+                // Assign the UPI address to its value
+                tempInput.value = '9360751455';
+                // Append the input element to the document body
+                document.body.appendChild(tempInput);
+                // Select the input element's content
+                tempInput.select();
+                // Copy the selected content
+                document.execCommand('copy');
+                // Remove the temporary input element
+                document.body.removeChild(tempInput);
+                // Show a confirmation message
+                alert('UPI address copied: 9360751455');
+                // Prevent the default link behavior
+                return false;
+            });
+            </script>
     </body>
 
 <script src="assets/js/jquery-3.2.1.min.js"></script>
